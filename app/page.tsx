@@ -74,7 +74,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 font-bold text-sm text-gray-400 tracking-wide">
-          {['Features', 'Tech', 'Privacy'].map((item) => (
+          {['Features', 'Tech'].map((item) => (
             <button 
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())} 
@@ -107,7 +107,7 @@ const Navbar = () => {
             className="md:hidden bg-zinc-950 border-b border-orange-500/20 overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-6 text-center">
-              {['Features', 'Tech', 'Privacy'].map((item) => (
+              {['Features', 'Tech'].map((item) => (
                 <button 
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -276,133 +276,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-5 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay"></div>
       </section>
 
-      {/* PRIVACY POLICY - COMPREHENSIVE & FULL */}
-      <section id="privacy" className="py-32 px-6 bg-zinc-950 relative">
-        <div className="container mx-auto max-w-4xl">
-          <SectionTitle title="LEGAL" subtitle="PRIVACY" />
 
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl">
-            {/* Policy Header */}
-            <div className="bg-zinc-800/50 p-8 border-b border-zinc-700 flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-orange-600/20 rounded-xl">
-                  <Lock className="text-orange-500" size={32} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Privacy Policy</h3>
-                  <p className="text-gray-400 text-xs font-mono mt-1">Ref: {APP_VERSION} | Effective: {EFFECTIVE_DATE}</p>
-                </div>
-              </div>
-              <div className="px-4 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs font-bold uppercase tracking-wide">
-                Google Play Compliant
-              </div>
-            </div>
-
-            {/* FULL POLICY TEXT */}
-            <div className="p-8 md:p-12 text-gray-300 space-y-8 font-light text-sm leading-relaxed">
-              
-              <div className="bg-black/40 p-6 rounded-xl border border-white/5 mb-8">
-                <h4 className="text-white font-bold mb-2">Introduction</h4>
-                <p>
-                  Welcome to <strong>{APP_NAME}</strong>. We are committed to protecting your privacy and ensuring you have a positive experience on our app and website. This policy explains our practices regarding personal data collection and usage.
-                </p>
-              </div>
-
-              {/* 1. Information Collection */}
-              <div>
-                <h4 className="text-orange-500 font-bold uppercase tracking-wider mb-3">1. Information We Collect</h4>
-                <p className="mb-3">We collect the following types of information to provide and improve our Service:</p>
-                <ul className="list-disc pl-5 space-y-2 text-gray-400">
-                  <li><strong>Personal Data:</strong> While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to: Email address, First name and last name, Cookies and Usage Data.</li>
-                  <li><strong>Usage Data:</strong> We may also collect information that your browser sends whenever you visit our Service or when you access the Service by or through a mobile device.</li>
-                  <li><strong>Gaming Profile:</strong> We collect game statistics, ranks, and preferred roles to enable our matching algorithm.</li>
-                </ul>
-              </div>
-
-              {/* 2. Use of Data */}
-              <div>
-                <h4 className="text-orange-500 font-bold uppercase tracking-wider mb-3">2. How We Use Your Data</h4>
-                <p className="mb-3"><strong>{APP_NAME}</strong> uses the collected data for various purposes:</p>
-                <ul className="list-disc pl-5 space-y-2 text-gray-400">
-                  <li>To provide and maintain the Service.</li>
-                  <li>To notify you about changes to our Service.</li>
-                  <li>To allow you to participate in interactive features (e.g., Voice Chat, Matching) when you choose to do so.</li>
-                  <li>To provide customer care and support.</li>
-                  <li>To monitor the usage of the Service and detect technical issues.</li>
-                </ul>
-              </div>
-
-              {/* 3. Permissions */}
-              <div>
-                <h4 className="text-orange-500 font-bold uppercase tracking-wider mb-3">3. App Permissions</h4>
-                <div className="grid md:grid-cols-2 gap-4 mt-2">
-                   <div className="bg-zinc-950 p-4 rounded-lg border border-zinc-800">
-                      <strong className="text-white block mb-1">Microphone (RECORD_AUDIO)</strong>
-                      Used strictly for Real-Time Voice Chat via Agora.io. We do not record or store your conversations on our servers.
-                   </div>
-                   <div className="bg-zinc-950 p-4 rounded-lg border border-zinc-800">
-                      <strong className="text-white block mb-1">Location (ACCESS_FINE_LOCATION)</strong>
-                      Optional. Used to suggest players near you. You can use the app without granting this permission.
-                   </div>
-                </div>
-              </div>
-
-               {/* 4. Third Party */}
-               <div>
-                <h4 className="text-orange-500 font-bold uppercase tracking-wider mb-3">4. Third-Party Service Providers</h4>
-                <p className="mb-3">We employ third-party companies to facilitate our Service ("Service Providers"), to provide the Service on our behalf, or to assist us in analyzing how our Service is used.</p>
-                <ul className="list-disc pl-5 space-y-1 text-gray-400">
-                  <li><strong>Google Firebase:</strong> Authentication & Database.</li>
-                  <li><strong>Agora.io:</strong> Real-time Voice & Video SDK.</li>
-                  <li><strong>Google Analytics:</strong> Usage monitoring.</li>
-                </ul>
-              </div>
-
-              {/* 5. DELETION (CRITICAL) */}
-              <div className="bg-red-900/10 border border-red-600/30 p-6 rounded-2xl">
-                <h4 className="text-red-500 font-bold uppercase tracking-wider mb-3 flex items-center gap-2">
-                   <Lock size={18}/> 5. Data Retention & Deletion
-                </h4>
-                <p className="mb-4">
-                  We will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy.
-                </p>
-                <p className="mb-4 font-bold text-white">Your Right to Delete Data:</p>
-                <p className="mb-2">You have the right to delete your account and all associated data at any time. This action is irreversible.</p>
-                <ul className="list-decimal pl-5 space-y-1 text-gray-400">
-                  <li><strong>In-App:</strong> Navigate to Settings {'>'} Account {'>'} Delete Account.</li>
-                  <li><strong>By Email:</strong> Contact us at <span className="text-orange-400">{CONTACT_EMAIL}</span> with the subject "DELETE DATA". We will process your request within 30 days.</li>
-                </ul>
-              </div>
-
-              {/* 6. Children */}
-              <div>
-                <h4 className="text-orange-500 font-bold uppercase tracking-wider mb-3">6. Children's Privacy</h4>
-                <p>
-                  Our Service does not address anyone under the age of 13 ("Children"). We do not knowingly collect personally identifiable information from anyone under the age of 13. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us.
-                </p>
-              </div>
-
-              {/* 7. Changes */}
-              <div>
-                <h4 className="text-orange-500 font-bold uppercase tracking-wider mb-3">7. Changes to This Privacy Policy</h4>
-                <p>
-                  We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "effective date" at the top of this Privacy Policy.
-                </p>
-              </div>
-
-              {/* 8. Contact */}
-              <div className="border-t border-zinc-800 pt-6">
-                <h4 className="text-white font-bold mb-2">8. Contact Us</h4>
-                <p className="text-sm text-gray-400 mb-4">If you have any questions about this Privacy Policy, please contact us:</p>
-                <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-3 px-5 py-3 bg-white/5 border border-white/10 hover:border-orange-500 text-white rounded-lg transition-colors text-sm font-bold">
-                  <Mail size={16}/> {CONTACT_EMAIL}
-                </a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* DOWNLOAD CTA */}
       <section id="download" className="py-24 bg-gradient-to-b from-zinc-950 to-black text-center relative">
@@ -450,12 +324,26 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-10 bg-black border-t border-zinc-900 text-center">
-        <div className="flex justify-center items-center gap-2 mb-4 opacity-70">
-          <Flame className="text-orange-600" size={20} />
-          <span className="font-bold tracking-widest uppercase text-white">GameNect</span>
+      <footer className="py-12 bg-black border-t border-zinc-900">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-2 opacity-70">
+              <Flame className="text-orange-600" size={24} />
+              <span className="font-black tracking-widest uppercase text-white text-xl">GameNect</span>
+            </div>
+            
+            <div className="flex items-center gap-6 text-sm font-bold tracking-wider text-gray-500">
+              <a href="/privacy" className="hover:text-orange-500 transition-colors uppercase">Privacy Policy</a>
+              <span className="w-1 h-1 bg-zinc-800 rounded-full" />
+              <a href="/terms" className="hover:text-orange-500 transition-colors uppercase">Terms of Use</a>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-zinc-900 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-600 text-sm font-mono">
+            <p>&copy; 2025 GameNect Inc. By Le Minh Quang.</p>
+            <p>Built with Next.js & Tailwind</p>
+          </div>
         </div>
-        <p className="text-zinc-600 text-sm font-mono">&copy; 2025 GameNect Inc. By Le Minh Quang.</p>
       </footer>
     </main>
   );
