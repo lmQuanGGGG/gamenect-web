@@ -458,7 +458,7 @@ export default function Home() {
               icon={User}
               title={curr.verify_title}
               desc={curr.verify_desc}
-              accentBg="#FF6E40" // Orange
+              accentBg="#FF6E40" // Orangeeeee
             />
           </div>
         </div>
